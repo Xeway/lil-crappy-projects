@@ -1,0 +1,35 @@
+h1 {
+    color: red;
+}
+
+.table {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+.cell {
+    width: 150px;
+    height: 150px;
+    border: 2px solid cyan;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table > * {
+    background-color: royalblue;
+}
+
+.winner-show {
+    display: block;
+}
+
+.winner-hidden {
+    display: none;
+}

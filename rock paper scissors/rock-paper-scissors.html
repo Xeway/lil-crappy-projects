@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Pierre Feuille Ciseau</title>
+</head>
+<body>
+    <button id="pierre">Pierre</button>
+    <button id="feuille">Feuille</button>
+    <button id="ciseau">Ciseau</button>
+  
+    <div id="result"></div>
+
+    <script>
+        var buttons = document.querySelectorAll('button');
+
+        for(let i = 0 ; i < buttons.length ; i++) {
+            buttons[i].addEventListener('click', function(e) {
+                var joueur = buttons[i].textContent;
+                var robot = Math.floor(Math.random() * buttons.length);
+              
+              if(robot === 0) {
+                robot = "Pierre";
+              } else if(robot === 1) {
+                robot = "Feuille";
+              } else if(robot === 2) {
+                robot = "Ciseau";
+              }
+
+              var resultat;
+
+              if((joueur === 'Pierre' && robot === 'Ciseau') || (joueur === 'Ciseau' && robot === 'Feuille') || (joueur === 'Feuille' && robot === 'Pierre')) {
+                resultat = "gagné !";
+              } else {
+                  resultat = 'perdu !';
+              }
+
+              document.querySelector('#result').innerHTML = `
+              Joueur : ${joueur}<br/>
+              Robot : ${robot}<br/>
+              Tu as ${resultat}
+              `;
+              
+            });
+        }
+
+
+    </script>
+</body>
+</html>
